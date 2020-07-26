@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.013245, 1 )
+colors = PoolColorArray( 0.013245, 0.013245, 0.013245, 1, 1, 1, 1, 1 )
+
+[sub_resource type="Curve" id=2]
+min_value = -1.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.994253, -1 ), 0.0, 0.0, 0, 0 ]
+
+[node name="fire_cracker" type="CPUParticles2D"]
+amount = 100
+lifetime = 2.0
+direction = Vector2( 100, 100 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 50.0
+initial_velocity_random = 1.0
+linear_accel = 20.0
+scale_amount = 3.0
+scale_amount_random = 1.0
+color_ramp = SubResource( 1 )
+hue_variation = -0.42
+hue_variation_random = 1.0
+hue_variation_curve = SubResource( 2 )

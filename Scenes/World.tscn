@@ -1,0 +1,244 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://res/background_cut.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Elephant_black.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Elephant.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Camel_black.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/horse_black.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/King_black.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Queen_black.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Available_moves.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Solider_black.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Elephant_white.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Camel_white.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/horse_white.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/King_white.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Queen_white.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Solider_white.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Kill_animation.tscn" type="PackedScene" id=17]
+[ext_resource path="res://res/BG_music.wav" type="AudioStream" id=18]
+[ext_resource path="res://res/game_over.wav" type="AudioStream" id=19]
+[ext_resource path="res://res/win.wav" type="AudioStream" id=20]
+[ext_resource path="res://Scenes/fire_crackers.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Win_message.tscn" type="PackedScene" id=22]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 256, 32 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 272 )
+
+[node name="World" type="Node2D"]
+script = ExtResource( 3 )
+ava = ExtResource( 9 )
+kill_animation = ExtResource( 17 )
+fire_cracker = ExtResource( 21 )
+win_message = ExtResource( 22 )
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="Background_cut" type="Sprite" parent="Background"]
+position = Vector2( -26.4771, -26.8091 )
+scale = Vector2( 0.22757, 0.227327 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Elephant_Black_1" parent="." groups=[
+"black",
+] instance=ExtResource( 2 )]
+script = ExtResource( 4 )
+
+[node name="Elephant_Black_2" parent="." groups=[
+"black",
+] instance=ExtResource( 2 )]
+position = Vector2( 448, 0 )
+script = ExtResource( 4 )
+
+[node name="Camel_Black_1" parent="." groups=[
+"black",
+] instance=ExtResource( 5 )]
+position = Vector2( 128, 0 )
+
+[node name="Camel_Black_2" parent="." groups=[
+"black",
+] instance=ExtResource( 5 )]
+position = Vector2( 320, 0 )
+
+[node name="Horse_Black_1" parent="." groups=[
+"black",
+] instance=ExtResource( 6 )]
+position = Vector2( 64, 0 )
+
+[node name="Horse_Black_2" parent="." groups=[
+"black",
+] instance=ExtResource( 6 )]
+position = Vector2( 384, 0 )
+
+[node name="King_Black" parent="." groups=[
+"black",
+] instance=ExtResource( 7 )]
+position = Vector2( 192, 0 )
+
+[node name="Queen_Black" parent="." groups=[
+"black",
+] instance=ExtResource( 8 )]
+position = Vector2( 256, 0 )
+
+[node name="Solider_Black_1" parent="." groups=[
+"black",
+] instance=ExtResource( 10 )]
+position = Vector2( 256, 64 )
+
+[node name="Solider_Black_2" parent="." groups=[
+"black",
+] instance=ExtResource( 10 )]
+position = Vector2( 256, 64 )
+
+[node name="Solider_Black_3" parent="." groups=[
+"black",
+] instance=ExtResource( 10 )]
+position = Vector2( 256, 64 )
+
+[node name="Solider_Black_4" parent="." groups=[
+"black",
+] instance=ExtResource( 10 )]
+position = Vector2( 256, 64 )
+
+[node name="Solider_Black_5" parent="." groups=[
+"black",
+] instance=ExtResource( 10 )]
+position = Vector2( 256, 64 )
+
+[node name="Solider_Black_6" parent="." groups=[
+"black",
+] instance=ExtResource( 10 )]
+position = Vector2( 256, 64 )
+
+[node name="Solider_Black_7" parent="." groups=[
+"black",
+] instance=ExtResource( 10 )]
+position = Vector2( 256, 64 )
+
+[node name="Solider_Black_8" parent="." groups=[
+"black",
+] instance=ExtResource( 10 )]
+position = Vector2( 256, 64 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="up" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 256, -40 )
+shape = SubResource( 1 )
+
+[node name="down" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 256, 552 )
+shape = SubResource( 1 )
+
+[node name="left" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -40, 256 )
+shape = SubResource( 2 )
+
+[node name="right" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 552, 256 )
+shape = SubResource( 2 )
+
+[node name="Elephant_white_1" parent="." groups=[
+"white",
+] instance=ExtResource( 11 )]
+position = Vector2( 448, 448 )
+
+[node name="Elephant_white_2" parent="." groups=[
+"white",
+] instance=ExtResource( 11 )]
+position = Vector2( 0, 448 )
+
+[node name="Camel_white_1" parent="." groups=[
+"white",
+] instance=ExtResource( 12 )]
+position = Vector2( 128, 448 )
+
+[node name="Camel_white_2" parent="." groups=[
+"white",
+] instance=ExtResource( 12 )]
+position = Vector2( 320, 448 )
+
+[node name="Horse_white_1" parent="." groups=[
+"white",
+] instance=ExtResource( 13 )]
+position = Vector2( 64, 448 )
+
+[node name="Horse_white_2" parent="." groups=[
+"white",
+] instance=ExtResource( 13 )]
+position = Vector2( 384, 448 )
+
+[node name="Queen_white" parent="." groups=[
+"white",
+] instance=ExtResource( 15 )]
+position = Vector2( 192, 448 )
+
+[node name="King_white" parent="." groups=[
+"white",
+] instance=ExtResource( 14 )]
+position = Vector2( 256, 448 )
+
+[node name="Solider_white_1" parent="." groups=[
+"white",
+] instance=ExtResource( 16 )]
+position = Vector2( 0, 384 )
+
+[node name="Solider_white_2" parent="." groups=[
+"white",
+] instance=ExtResource( 16 )]
+position = Vector2( 0, 384 )
+
+[node name="Solider_white_3" parent="." groups=[
+"white",
+] instance=ExtResource( 16 )]
+position = Vector2( 0, 384 )
+
+[node name="Solider_white_4" parent="." groups=[
+"white",
+] instance=ExtResource( 16 )]
+position = Vector2( 0, 384 )
+
+[node name="Solider_white_5" parent="." groups=[
+"white",
+] instance=ExtResource( 16 )]
+position = Vector2( 0, 384 )
+
+[node name="Solider_white_6" parent="." groups=[
+"white",
+] instance=ExtResource( 16 )]
+position = Vector2( 0, 384 )
+
+[node name="Solider_white_7" parent="." groups=[
+"white",
+] instance=ExtResource( 16 )]
+position = Vector2( 0, 384 )
+
+[node name="Solider_white_8" parent="." groups=[
+"white",
+] instance=ExtResource( 16 )]
+position = Vector2( 0, 384 )
+
+[node name="Camera" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+smoothing_enabled = true
+
+[node name="Background_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 18 )
+
+[node name="kill_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 19 )
+
+[node name="Game_finished" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 20 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+[connection signal="finished" from="kill_music" to="." method="_on_kill_music_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
