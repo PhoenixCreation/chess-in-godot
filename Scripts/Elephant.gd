@@ -3,7 +3,7 @@ extends Node2D
 onready var map = get_parent()
 var index_on_board = Vector2(0,0)
 var size = 8
-
+var points = 10
 onready var ray_up = $Up
 onready var ray_down = $Down
 onready var ray_left = $Left

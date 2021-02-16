@@ -2,7 +2,7 @@ extends Node2D
 
 onready var map = get_parent()
 var index_on_board = Vector2(0,0)
-
+var points = 5
 var firstmove = true
 
 func _ready():

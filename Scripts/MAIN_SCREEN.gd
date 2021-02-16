@@ -21,4 +21,4 @@ func _on_RULES_pressed():
 
 
 func _on_PVE_pressed():
-	OS.alert("I am sorry but it is still under development. check back soon.","Sorry...:(")
+	get_tree().change_scene("res://Scenes/PvE.tscn")
